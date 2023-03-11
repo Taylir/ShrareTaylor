@@ -97,8 +97,8 @@ function PinDetail({ user }) {
             <p className="mt-3">{pinDetail.about}</p>
           </div>
           <Link
-            to={`user-profile/${pinDetail.postedBy?._id}`}
-            className="flex gap-2 mt-5 items-center bg-white rounded-lg"
+            to={`../user-profile/${pinDetail.postedBy?._id}`}
+            className="flex gap-2 mt-5 items-center w-3/5 bg-gray-100 rounded-lg"
           >
             <img
               src={pinDetail.postedBy?.image}
@@ -116,11 +116,13 @@ function PinDetail({ user }) {
                 className="flex gap-2 ,t-5 items-center bg-white rounded-lg"
                 key={i}
               >
-                <img
-                  src={comment.postedBy.image}
-                  alt="user-profile"
-                  className="w-10 h-10 rounded-full cursor-pointer"
-                />
+                <Link to={`../user-profile/${comment.postedBy._id}`}>
+                  <img
+                    src={comment.postedBy.image}
+                    alt="user-profile"
+                    className="w-10 h-10 rounded-full cursor-pointer"
+                  />
+                </Link>
                 <div className="flex flex-col">
                   <p className="font-bold ">{comment.postedBy.username}</p>
                   <p>{comment.comment}</p>
@@ -129,7 +131,7 @@ function PinDetail({ user }) {
             ))}
           </div>
           <div className="flex items-center flex-wrap mt-6 gap-3">
-            <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
+            <Link to={`../user-profile/${pinDetail.postedBy?._id}`}>
               <img
                 src={pinDetail.postedBy?.image}
                 alt="user-profile"
