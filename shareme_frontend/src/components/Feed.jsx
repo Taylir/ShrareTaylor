@@ -13,7 +13,6 @@ export default function Feed() {
 
   useEffect(() => {
     setLoading(true);
-
     if (categoryId) {
       const query = searchQuery(categoryId);
 

@@ -49,8 +49,6 @@ function Pin({ pin: { postedBy, image, _id, destination, save } }) {
     });
   };
 
-  useEffect(() => {}, [save]);
-
   return (
     <div className="m-2">
       <div
