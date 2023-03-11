@@ -131,9 +131,9 @@ function PinDetail({ user }) {
             ))}
           </div>
           <div className="flex items-center flex-wrap mt-6 gap-3">
-            <Link to={`../user-profile/${pinDetail.postedBy?._id}`}>
+            <Link to={`../user-profile/${user?._id}`}>
               <img
-                src={pinDetail.postedBy?.image}
+                src={user?.image}
                 alt="user-profile"
                 className="w-8 h-8 rounded-full cursor-pointer"
               />

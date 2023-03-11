@@ -26,7 +26,7 @@ function Pin({ pin: { postedBy, image, _id, destination, save } }) {
         .setIfMissing({ save: [] })
         .insert("after", "save[-1]", [
           {
-            _key: uuidv4,
+            _key: uuidv4(),
             userId: user.sub,
             postedBy: {
               _type: "postedBy",
@@ -54,7 +54,10 @@ function Pin({ pin: { postedBy, image, _id, destination, save } }) {
         className="relative cursor-zoom-in w-auto hover:shadow-lg rouded-lg overflow-hidden transition-all duration-500 ease-in-out"
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
-        onClick={() => navigate(`/pin-detail/${_id}`)}
+        onClick={() => {
+          navigate(`/pin-detail/${_id}`);
+          console.log(postedBy, image, _id, destination, save);
+        }}
       >
         <img
           className="rounded-lg w-full"
